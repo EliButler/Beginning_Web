@@ -1,0 +1,52 @@
+<!--
+Michael Eli Butler
+Chapter #
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Borders</title>
+    <!--This standard has changed.
+    Source: https://www.w3schools.com/css/css3_border_images.asp-->
+    <style type = "text/css">
+        div
+        {
+            border-width: 30px;
+            width: 234px;
+            padding: 20px 20px;
+        }
+
+        #stretch
+        {
+            border: 35px solid transparent;
+            padding: 20px 20px;
+            border-image: url("border.png") 80 80 80 80 stretch;
+        }
+
+        #repeat
+        {
+            border: 30px solid transparent;
+            padding: 20px 20px;
+            border-image: url("border.png") 34% 34% repeat;
+        }
+
+        #borderimg
+        {
+            border: 10px solid transparent;
+            padding: 15px;
+            border-image: url("border.png") 30 stretch;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Image Borders</h2>
+    <img src = "border.png" alt = "images used to demonstrate borders">
+    <p><div id="stretch">Stretching the image border.</div></p>
+    <p><div id = "repeat"> Repeating the image border</div></p>
+    <p><div id="borderimg">Second Try!</div></p>
+</body>
+</html>

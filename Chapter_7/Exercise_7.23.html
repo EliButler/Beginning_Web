@@ -1,0 +1,66 @@
+<!--
+Michael Eli Butler
+Chapter #
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.23</title>
+    <script type = "text/javascript">
+        //Variables
+        var decrypt_integer;
+        var string_integer;
+        var post_string;
+
+        //User Input
+        decrypt_integer = window.prompt("Enter Decryption Number: ");
+
+        //Rearrange the digits
+        var n_1;
+        var n_2;
+        var n_3;
+        var n_4;
+
+        string_integer = decrypt_integer.toString();
+        n_1 = string_integer[0];
+        n_2 = string_integer[1];
+        n_3 = string_integer[2];
+        n_4 = string_integer[3];
+
+        //Reversing Modulus
+        var first_num = parseInt(n_1);
+        var second_num = parseInt(n_2);
+        var third_num = parseInt(n_3);
+        var fourth_num = parseInt(n_4);
+
+        first_num = Math.abs(first_num - 7);
+        second_num = Math.abs(second_num - 7);
+        third_num = Math.abs(third_num - 7);
+        fourth_num = Math.abs(fourth_num - 7);
+
+        //Conversion to String
+        first_string = first_num.toString();
+        second_string = second_num.toString();
+        third_string = third_num.toString();
+        fourth_string = fourth_num.toString();
+
+        post_string = third_string + fourth_string + first_string + second_string;
+
+        document.writeln("<h1>" + post_string + "</h1>");
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
+<!--Write a script that inputs an encrypted four-digit integer (from 7.22)
+and decrypts it to form the original number.
+1234 = 3412
+1234 = 8, 9, 10, 11
+1234 = 0189
+
+-->

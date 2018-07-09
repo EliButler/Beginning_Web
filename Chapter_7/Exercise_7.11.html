@@ -1,0 +1,46 @@
+<!--
+Michael Eli Butler
+Chapter #
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Miles Per Gallon</title>
+    <link href="blank.css" type="text/css" rel="stylesheet"/>
+    <script type = "text/javascript">
+        //Variables
+        var tank_value;
+        var miles_driven;
+
+        //mpg = miles_driver/tank_value
+
+        //User input
+        tank_value = window.prompt("Enter tank volume in gallons: ");
+        miles_driven = window.prompt("Enter miles driver: ");
+
+        //String to Integer Conversion
+        tank_value = parseInt(tank_value);
+        miles_driven = parseInt(miles_driven);
+
+        var mpg = (miles_driven/tank_value);
+
+        //Output
+        document.writeln("<h1> Miles per Gallon: " + mpg + "</h1>");
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!--Drivers are concerned with the mileage obtained by their automobiles. One driver has
+kept track of several tankfuls of gasoline by recording the number of miles driven and
+the number of gallons used for each tankful. The script should calculate and output
+HTML5 tet that displays the number of miles per gallon obtained for each tankful and
+prints the combined number of miles per gallon obtained for all tankfuls up to this point.
+Use prompt dialogs to obtain the data from the user.-->

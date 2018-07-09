@@ -1,0 +1,47 @@
+<!--
+Michael Eli Butler
+Chapter #
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using Relational Operators</title>
+    <script type = "text/javascript">
+
+        var name; //string entered by the users
+        var now = new Date();   //Current date and time
+        var hour = now.getHours();  //current hour (0-24)
+
+        //read the name from the prompt box as a string
+        name = window.prompt("Please enter your name:");
+
+        //determine whether it's morning
+        if (hour < 12)
+            document.write( "<h1>Good Morning, </h1>");
+
+        //determine whether the time is PM
+        if (hour >= 12)
+        {
+            //convert to a 12-hour clock
+            hour = hour - 12
+
+            //determine whether it is before 6 pm
+            if (hour < 6)
+                document.write("<h1> Good Afternoon, </h1>");
+
+            //determine whether it is after 6 pm
+            if (hour >= 6)
+                document.write("<h1>Good Evening, </h1>");
+        }
+
+        document.writeln( "<h1>" + name +
+            ", welcome to Javascript programming!</h1>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

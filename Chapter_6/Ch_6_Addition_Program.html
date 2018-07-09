@@ -1,0 +1,40 @@
+<!--
+Michael Eli Butler
+Chapter #
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>An Addition Program</title>
+    <script type = "text/javascript">
+        /*Setting Variables.*/
+        var first_number;
+        var second_number;
+        var number1;
+        var number2;
+        var sum;
+
+        /*read in the first number from user as a string*/
+        first_number = window.prompt("Enter first integer: ");
+
+        /*read in the second number from user as a string*/
+        second_number = window.prompt("Enter second integer: ");
+
+        //Convert numbers from strings to integers
+        number1 = parseInt(first_number, 10);
+        number2 = parseInt(second_number, 10);
+
+        sum = number1 + number2;
+
+        //dispaly results
+        document.writeln("<h1>The sum is " + sum + "</h1>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

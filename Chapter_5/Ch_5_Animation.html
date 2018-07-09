@@ -1,0 +1,36 @@
+<!--
+Michael Eli Butler
+Chapter #
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+    <!--Did not use a vendor prefix, did not work on Safari because I have
+    an older version. www.caniuse.com says animations are able on safari 11.1 and on.-->
+    <style type = "text/css">
+
+        img
+        {
+            position: relative;
+            animation: movingImage linear 10s infinite 1s alternate;
+        }
+        @keyframes movingImage
+        {
+            0%  {opacity: 0; left: 50px; top: 0;}
+            25% {opacity: 1; left: 0; top: 50px;}
+            50% {opacity: 0; left: 50px; top: 100px;}
+            75% {opacity: 1; left: 100px; top: 50px;}
+            100%{opacity: 0; left: 50px; top: 0;}
+        }
+    </style>
+</head>
+<body>
+    <img src = "jhtp.png" width = "138" height="180"
+         alt = "Java How to Program book cover">
+
+</body>
+</html>

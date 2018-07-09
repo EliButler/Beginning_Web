@@ -1,0 +1,122 @@
+<!--
+Michael Eli Butler
+Chapter # 8
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 8 Assignment</title>
+    <script type = "text/javascript">
+        //Variables
+        var sentinel_value = true;
+        var user_product;
+        var user_quantity;
+        var grand_total = 0;
+        var sub_total;
+
+        //Instructions
+        window.alert("1. Enter the product number (1 through 5). \n" +
+            "2. Enter the quantity of that product. \n" +
+            "3. Enter 0 for either product number or quantity at any time to get Grand Total.");
+
+        //Initial User Values
+        user_product = window.prompt("Enter Product Number (1 - 5): ");
+        user_quantity = window.prompt("Enter Quantity: ");
+
+        //Begin Sentinel Controlled Loop
+        //Stop Value is 0 for either user_product or user_quantity
+        while (sentinel_value == true)
+        {
+            //User Entry
+            if ((user_product == 0) || (user_quantity == 0))
+            {
+                document.writeln("<h1>Grand Total: $" + grand_total.toFixed(2) + "</h1>");
+                sentinel_value = false;
+                break;
+            }
+
+            //Change user quantity from string to integer
+            user_quantity = parseInt(user_quantity);
+
+            //Switch for Prices
+            switch (user_product)
+            {
+                case "1":
+                    sub_total = user_quantity * 2.98;
+                    break;
+
+                case "2":
+                    sub_total = user_quantity * 4.50;
+                    break;
+
+                case "3":
+                    sub_total = user_quantity * 9.98;
+                    break;
+
+                case "4":
+                    sub_total = user_quantity * 4.49;
+                    break;
+
+                case "5":
+                    sub_total = user_quantity * 6.87;
+                    break;
+            }
+            //Grand Total
+            grand_total = grand_total + sub_total;
+            sub_total = 0;
+
+            //Loop Controlled User Prompt
+
+            //Product Prompt
+            if (user_product != 0)
+            {
+                user_product = window.prompt("Enter Product Number (1 - 5): ");
+            }
+            if (user_product == 0)
+            {
+                document.writeln("<h1>Grand Total: $" + grand_total.toFixed(2) + "</h1>");
+                sentinel_value = false;
+                break;
+            }
+
+            //Quantity Prompt
+            if ((user_quantity != 0) || (user_product != 0))
+            {
+                user_quantity = window.prompt("Enter Quantity: ");
+
+            }
+            else if ((user_quantity == 0) || (user_product == 0))
+            {
+                document.writeln("<h1>Grand Total: $" + grand_total.toFixed(2) + "</h1>");
+                sentinel_value = false;
+                break;
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
+
+<!--A mail-order house sells five different products whose retail prices are as follows:
+product 1, $2.98;
+product 2, $4.50;
+product 3, $9.98;
+product 4, $4.49;
+product 5, $6.87;
+Write a script that reads a series of pairs of numbers as follows:
+    a. Product number
+    b. Quantity sold for one day
+Your program should use a switch statement to determine each product's retail price and
+should calculate and output HTML5 that displays the total retail value of all the products
+sold last week. Use a prompt dialog to obtain the product number and quantity from the
+user. Use a sentinel-controlled loop to determine when the program should stop looping
+and display the final results.
+-->

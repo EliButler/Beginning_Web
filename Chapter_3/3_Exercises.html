@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="blank.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<!--Students were asked to rate the food in the cafeteria on a scale of 1 to 10.
+Use a meter element with text to its left and right to indicate that the average
+rating was 7 out of 10.-->
+<body>
+<h2>
+    3.5 A
+</h2>
+        <!-- METER ELEMENT -->
+        <h2>
+            Cafeteria Rating:
+        </h2>
+        <br>
+        0 <meter min = "0"
+            max = "10"
+            value = "7">
+            </meter> 10
+            <br>
+        The Average Rating was 7 out of 10.
+
+
+        <details>
+            <summary>
+                Student results.
+            </summary>
+            <ul>
+                <li>
+                    Lack of healthy choices.
+                </li>
+                <li>
+                    Lack of fresh vegetables.
+                </li>
+            </ul>
+        </details>
+    <br>
+        <form method="post" action="http://www.eli.com">
+        <p>
+        <label> First Name:
+            <input type = "text" id = "first_name">
+        </label>
+        <br>
+        <label> Last Name:
+            <input  type = "text" id = "last_name" placeholder="Enter Last Name" autofocus>
+        </label>
+    </p>
+    </form>
+<!-- DATA LIST -->
+<h2>
+    Data List
+</h2>
+<p>
+    <label for  = "state_list">
+        State:
+        <input type = "text" id = "state_list"
+               placeholder="Select State" list = "state">
+                <datalist id = "state">
+                    <option value = "Arizona">
+                    <option value = "Texas">
+                    <option value = "New Mexico">
+                    <option value = "Montana">
+                    <option value = "Alaska">
+                </datalist>
+    </label>
+</p>
+
+<!--Range input-->
+<h2>
+    Range Input
+</h2>
+<p>
+    <label >
+        Range:
+        0 <input type = "range"
+                 min = "0"
+                 max = "20"
+                 value = "10" /> 20
+    </label>
+</p>
+
+<!--Mark Element-->
+<h2>
+    Mark Element
+</h2>
+<p>
+    I want to <mark>mark</mark> that last word.
+</p>
+
+<!--3.6 Website Registration Form with Optional Survey
+Create a website registration form to obtain a user's first name, last name and
+email address. In addition, include an optional survey question that asks the user's
+year in college (e.g., Freshman). Place the optional survey questions in a details element
+that the user can expand to see the question.-->
+
+<h2>
+    Website Registration Form with Optional Survey
+</h2>
+    <!-- FORM BEGINS -->
+    <form method = "post" action = "http://www.deitel.com">
+        <input type = "hidden" name = "recipient" value = "feedback@college.edu">
+        <input type = "hidden" name = "subject" value = "Feedback Form">
+        <input type = "hidden" name = "redirect" value = "index.html">
+
+        <!-- NAME INPUT -->
+        <p>
+            <label> First Name:
+                <input name = "first_name" type = "text" size = "30" maxlength = "35">
+            </label>
+        </p>
+        <p>
+            <label> Last Name:
+                <input name = "last_name" type = "text" size = "30" maxlength = "35">
+            </label>
+        </p>
+
+        <!-- EMAIL INPUT -->
+        <p>
+            <label> Email:
+                <input name = "email" type = "text" size = "30" maxlength = "50">
+            </label>
+        </p>
+        <details>
+            <summary>Click for Optional Survey Questions.</summary>
+            <ul>
+                <li><label>What is your Favorite Color?
+                    <input name = "fav_color" type = "text" size = "30" maxlength="35">
+                </label>
+                </li>
+                <li>
+                    <label>What is your favorite vehicle?
+                        <input name = "fav_vehicle" type = "text" size = "30" maxlength="35">
+                    </label>
+                </li>
+                <li>
+                    What is your favorite operating system?
+                    <br>
+                    <label>Linux
+                    <input name = "Linux" type = "radio" value = "linux">
+                    </label>
+
+                    <label>Microsoft
+                        <input name = "Microsoft" type = "radio" value = "microsoft">
+                    </label>
+
+                    <label>iOS
+                        <input name = "iOS" type = "radio" value = "ios">
+                    </label>
+                </li>
+            </ul>
+        </details>
+</form>
+</body>
+</html>

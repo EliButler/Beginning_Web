@@ -1,0 +1,60 @@
+<!--
+Michael Eli Butler
+Chapter #
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 7.12</title>
+    <script type = "text/javascript">
+        //Variables
+        var account_number;
+        var begin_balance;
+        var total_month_charge;
+        var total_months_credits;
+        var allowed_credit_limit;
+        var new_balance = 0;
+
+        //User Input
+        account_number = window.prompt("Please Enter Account Number: ");
+        begin_balance = window.prompt("Please enter beginning balance: ");
+        total_month_charge = window.prompt("Please enter total monthly charges: ");
+        total_months_credits = window.prompt("Please enter total credits: ");
+        allowed_credit_limit = window.prompt("Please enter credit limit: ");
+
+        //String to Integer Conversion
+        begin_balance = parseInt(begin_balance);
+        total_month_charge = parseInt(total_month_charge);
+        total_months_credits = parseInt(total_months_credits);
+        allowed_credit_limit = parseInt(allowed_credit_limit);
+
+        //Calculating New Balance
+        new_balance = (begin_balance + total_month_charge - total_months_credits);
+
+        //new_balance output
+        document.writeln("<h1>New Balance: " + new_balance + "</h1>");
+
+        if (new_balance > allowed_credit_limit)
+        {
+            document.writeln("<br><h1> Credit Limit Exceeded </h1>");
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
+<!--Develope a script that will determine whether a department-store customer has exceeded
+the credit limit on a charge account. For each Customer, the following facts are
+available:
+    a. Account number
+    b. Balance at the beginning of the month
+    c. Total of all items charged by this customer this month
+    d. Total of all credits applied to this customer's account this month
+    e. Allowed credit limit-->

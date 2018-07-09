@@ -1,0 +1,136 @@
+<!--
+Michael Eli Butler
+Chapter # 9
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 9 Assignment</title>
+    <style type = "text/css">
+        .text         {font: 1em bold;
+                       background-color: lightsteelblue;}
+
+        .result_text  {font-size: 1em;}
+
+
+        .title        {font-weight: bold;
+                       font-size: 1em;}
+
+        table         {border: black 3px solid;
+                       text-align: center;}
+
+    </style>
+
+    <script type = "text/javascript">
+        //Variables
+        var head_count = 0;
+        var tail_count = 0;
+        var total_count = 0;
+        var head_percent = 0;
+        var tail_percent = 0;
+        var difference_1 = 0;
+        var difference_2 = 0;
+
+        //Function to flip coin
+        //1 = heads
+        //2 = tails
+
+        //Flips coin once
+        function flip()
+        {
+            var result = Math.floor(1 + Math.random() * 2);
+            return result;
+        }
+
+        //Main function or start
+        function main()
+        {
+            //Variables
+
+            //Assigning button function in javascript
+            var button = document.getElementById("flip_button");
+            button.addEventListener("click", main, false);
+
+            //flip function call
+            var internal_result;
+            internal_result = flip();
+
+            if (internal_result == 1)
+            {
+                head_count += 1;
+                total_count += 1;
+            }
+
+            else if (internal_result == 2)
+            {
+                tail_count += 1;
+                total_count += 1;
+            }
+            //Percentage
+            head_percent = ((head_count/total_count)*100).toFixed(1);
+            tail_percent = ((tail_count/total_count)*100).toFixed(1);
+            difference_1 = head_percent - tail_percent;
+            difference_2 = (Math.abs(difference_1)).toFixed(1);
+
+            //Calling Results Table
+            results_table()
+        }
+
+        //Results Table
+        function results_table()
+        {
+            //Assigning to HTML
+            var table_div = document.getElementById( "table_div_html");
+
+            //Table HTML + Javascript
+            table_div.innerHTML = "<table border = 1>" +
+                    "<caption class = title> Coin Toss Table</caption>" +
+                    "<thead class = text><th>Coin Toss Result</th><th>Heads Results</th><th>Tails Results</th><th>Total Count</th></thead>" +
+                    "<tbody><tr class = result_text><td rowspan='3'>" + flip() + "</td>" +
+                    "<td>" + head_count + "</td>" +
+                    "<td>" + tail_count + "</td>" +
+                    "<td>" + total_count + "</td></tr>" +
+                    "<tr class = text><td>Head %</td>" +
+                    "<td>Tail %</td>" +
+                    "<td>% Difference</td></tr>" +
+                    "<tr class = result_text><td>" + head_percent + "%</td>" +
+                    "<td>" + tail_percent + "%</td>" +
+                    "<td>" + difference_2 + "%</td></tr>" +
+                    "</tbody></table>";
+        }
+
+        //Creating and loading event.
+        window.addEventListener("load", main, false);
+
+
+    </script>
+</head>
+<body>
+    <!--Table-->
+    <div id = "table_div_html"></div>
+
+    <!--Button-->
+    <form action = "#">
+        <input id = "flip_button" type = "button" value = "Flip Coin">
+    </form>
+
+
+</body>
+</html>
+
+<!--9.21 Write a script that simulates coin tossing. Let the program toss the coin each
+time the user clicks the Toss button. Count the number of times each side the coin
+appears. Display the results. The program should call a separate function flip that
+takes no arguments and returns false for tails and true for heads.
+[Note: If the program realistically simulates the coin tossing, each side of the coin
+should appear approximately half the time.
+
+1. write a function that will choose either a 1 or 2. As in heads or tails.
+
+2. write a second function that will take it the above results, and count how many heads
+and tail results. Display the result as both number of heads and tails
+and percentage.
+-->

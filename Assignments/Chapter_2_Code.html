@@ -1,0 +1,123 @@
+<!--
+Michael Eli Butler
+Chapter 2 Assignment
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Form</title>
+
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <p>Your feedback would be greatly appreciated in order to
+        help us improve our site and campus.</p>
+    <br>
+
+
+<!-- FORM BEGINS -->
+<form method = "post" action = "http://www.deitel.com">
+    <input type = "hidden" name = "recipient" value = "feedback@college.edu">
+    <input type = "hidden" name = "subject" value = "Feedback Form">
+    <input type = "hidden" name = "redirect" value = "index.html">
+
+    <!-- NAME INPUT -->
+    <p>
+        <label> Name:
+            <input name = "name" type = "text" size = "30" maxlength = "35">
+            </label>
+    </p>
+
+    <!-- EMAIL INPUT -->
+    <p>
+        <label> Email:
+            <input name = "email" type = "text" size = "30" maxlength = "50">
+            </label>
+    </p>
+    <br>
+
+    <!-- CHECKBOXES -->
+    <p>
+        <strong> What did you like most: </strong>
+        <br>
+        <label> Campus
+            <input name = "like_most" type = "checkbox" value = "Campus">
+            </label>
+        <label> Students
+            <input name = "like_most" type = "checkbox" value = "Students">
+            </label>
+        <label> Location
+            <input name = "like_most" type = "checkbox" value = "Location">
+            </label>
+        <label> Atmosphere
+            <input name = "like_most" type = "checkbox" value = "Atmosphere">
+            </label>
+        <label> Dorm Rooms
+            <input name = "like_most" type = "checkbox" value = "Dorm Rooms">
+            </label>
+        <label> Sports
+            <input name = "like_most" type = "checkbox" value = "Sports">
+            </label>
+    </p>
+    <br>
+
+    <!-- RADIO BUTTONS -->
+    <p>
+        <strong>How did you become interested in our college?</strong>
+        <br>
+
+        <label> Friends
+            <input name = "how_our_college" type = "radio" value = "Friends">
+            </label>
+        <label> Television
+            <input name = "how_our_college" type = "radio" value = "Television">
+            </label>
+        <label> Internet
+            <input name = "how_our_college" type = "radio" value = "Internet">
+        </label>
+        <label> Other
+            <input name = "how_our_college" type = "radio" value = "Other">
+            </label>
+    </p>
+    <br>
+
+    <!-- COMMENT BOX -->
+    <p>
+        <label>If you have an additional comments, please type them in below. Thank you.
+            <br>
+            <textarea name = "comments"
+                      rows = "5" cols = "60">
+                </textarea>
+        </label>
+    </p>
+
+    <!-- SUBMIT AND INPUT BUTTONS -->
+    <p>
+        <input type = "submit" value = "Submit">
+        <input type = "reset" value = "Reset">
+    </p>
+
+</form>
+</body>
+</html>
+
+<!--
+ Feedback
+
+ text field: name
+ text field: email
+
+ Checkboxes: what I liked the most:
+    campus, students, location, atmosphere, dorm rooms and sports
+
+Radio Buttons: How you became interested in college:
+    friends, television, Internet and other
+
+Additional Comments Text box
+
+Submit and Reset Button
+
+-->

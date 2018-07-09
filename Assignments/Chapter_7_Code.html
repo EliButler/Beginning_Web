@@ -1,0 +1,83 @@
+<!--
+Michael Eli Butler
+Chapter # 7
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 7 Assignment</title>
+    <script type = "text/javascript">
+
+        //Variables
+        var user_string;            //User Input Number as String
+        var counter = 0;            //Counter and string index
+        var user_string_int;        //Individual number from string as an integer
+        var new_digit;              //Integer result of mathematical portion of encryption
+        var digit_to_string = "";   //Conversion of individual string to integer
+        var post_mod_string = "";   //digit_to_string accumulator
+
+        //User Input
+        user_string = window.prompt("Please enter 4 digit integer.");
+
+        //1. Digit Replacement
+        //   new_digit = (user_string_int + 7) % 10
+        while (counter < 4)
+        {
+            //Individual String Removal
+            user_string_int = user_string[counter];
+
+            //Conversion to Integer
+            user_string_int = parseInt(user_string_int);
+
+            //Encryption Formula
+            new_digit = (user_string_int + 7) % 10;
+
+            //Individual String to Integer Conversion
+            digit_to_string = new_digit.toString();
+
+            //Accumulation of Individual String characters
+            post_mod_string = post_mod_string + digit_to_string;
+
+            //Increment Counter
+            counter++;
+        }
+
+
+        //2. Number Swap
+        //Individual Index Values
+        var first_value = post_mod_string[0];
+        var second_value = post_mod_string[1];
+        var third_value = post_mod_string[2];
+        var fourth_value = post_mod_string[3];
+
+        //Assemble final string in modulated order
+        var final_string = third_value + fourth_value + first_value + second_value;
+
+        //Final Result
+        document.writeln("<br><h1>" + final_string + "</h1>");
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
+
+<!--7.22 page 250
+A company wants to transmit data over the telephone, but it's concerned that its phones
+may be tapped. All of its data is transmitted as four digit integers. It has asked you to
+write a script that will encrypt its data so that the data may be transmitted more securely.
+Your script should read a four digit integer entered by the user in a prompt dialog and
+encrypt it as follows:
+
+1. Replace each digit by (the sum of that digit plus 7) modulus 10
+2. then swap the first digit with the third
+3. swap the second digit with the fourth
+4. then output HTML5 text that displays the encrypted integer
+1234 = 3412
+-->

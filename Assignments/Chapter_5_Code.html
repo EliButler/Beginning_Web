@@ -1,0 +1,44 @@
+<!--
+Michael Eli Butler
+Chapter # 5
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+    <style type = "text/css">
+        img
+        {
+            margin: 100px;
+            position: relative;
+            animation: moving_image linear 10s infinite 1s;
+        }
+        h1
+        {
+            margin: 100px;
+            position: relative;
+            animation: moving_image linear 10s infinite 1s reverse;
+        }
+
+        @keyframes moving_image
+        {
+            0%  {opacity: 1; left: 0px; top: 0px;}
+            25% {opacity: 1; left: 100px; top: 0px;}
+            50% {opacity: 1; left: 100px; top: 100px;}
+            75% {opacity: 1; left: 0px; top: 100px;}
+            100%{opacity: 1; left: 0px; top: 0px;}
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Square Movement.</h1>
+
+</body>
+</html>
+
+<!--5.9 Animation Create an infinite animation of an element moving
+in a square pattern.-->

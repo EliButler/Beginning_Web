@@ -1,0 +1,75 @@
+<!--
+Michael Eli Butler
+Chapter #
+ITSE-1311-001
+Beginning Web Programming
+
+Fig. 4.6: advanced.html
+Embedded and Inheritance in style sheets
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>More Styles</title>
+    <style type = "text/css">
+        body    {font-family: arial, helvetica, sans-serif;}
+        a.nodec {text-decoration: none;}
+        a:hover {text-decoration: underline;}
+        li em   {font-weight: bold;}
+        h1, em  {text-decoration: underline;}
+        ul      {margin-left: 20px;}
+        ul ul   {font-size: .8em;}
+    </style>
+</head>
+<body>
+    <h1>Shopping list for Monday:</h1>
+
+    <ul>
+        <li>Milk</li>
+        <li>Bread</li>
+            <ul>
+                <li>white bread</li>
+                <li>rye bread</li>
+                <li>whole wheat bread</li>
+            </ul>
+        <li>Carrots</li>
+        <li>Yogurt</li>
+        <li>Pizza <em>with mushrooms</em></li>
+    </ul>
+
+<p>
+    <em>Go to the</em>
+    <a class = "nodec" href = "http://www.dietel.com">
+        Grocery store
+    </a>
+</p>
+    <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+                 src="http://jigsaw.w3.org/css-validator/images/vcss"
+                 alt="Valid CSS!" />
+        </a>
+    </p>
+</body>
+</html>
+
+<!--Inline Styles-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline Styles</title>
+</head>
+<body>
+    <p>
+        This text does not have any style applied to it.
+    </p>
+
+    <p style = "font-size: 20pt; color: deepskyblue;">
+        This text has the <em>font-size</em> and
+        <em>color</em> styles applied to it, making it
+        20pt and deep sky blue.
+    </p>
+</body>
+</html>

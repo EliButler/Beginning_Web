@@ -1,0 +1,42 @@
+<!--
+Michael Eli Butler
+Chapter #
+ITSE-1311-001
+Beginning Web Programming
+-->
+
+<!--Does not work in IE, and requires the webkit vendor prefix to use in
+Safari.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Melting Images</title>
+    <style type = "text/css">
+        #cover
+        {
+            position: relative;
+            margin: 0 auto;
+        }
+
+        #cover img
+        {
+            position: absolute;
+            left: 0;
+            -webkit-transition: opacity 4s ease-in-out;
+            transition: opacity 4s ease-in-out;
+        }
+        #cover img.top:hover
+        {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id = "cover">
+        <img class = "bottom" src = "jhtp.png" alt = "Java 9e Cover">
+        <img class = "top" src = "jhtp8.png" alt = "Java 8e Cover">
+    </div>
+</body>
+</html>

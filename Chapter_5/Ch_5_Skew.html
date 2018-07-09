@@ -1,0 +1,63 @@
+<!--
+Michael Eli Butler
+Chapter #
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skew</title>
+    <!--From what I can tell this is a work around for animated skewing
+    using IE, but as of right now, this code will not animate. For IE. -->
+    <style type = "text/css">
+        .skew .textbook
+        {
+            margin-left: 75px;
+            background: lightgreen;
+            height: 100px;
+            width: 200px;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 250%;
+            border: 3px solid DarkGreen;
+            border-radius: 15px;
+
+            /*Begin Skew Animation*/
+            -ms-animation-direction: skew 3s infinite linear;
+            -webkit-animation: skew 3s infinite linear;
+            animation: skew 3s infinite linear;
+        }
+
+        div
+        {
+            transform: skewX(20deg);
+        }
+
+        @-ms-keyframes skew
+        {
+            from { -webkit-transform: skewX(0deg);}
+            25%  { -webkit-transform: skewX(45deg);}
+            50%  { -webkit-transform: skewX(0);}
+            75%  { -webkit-transform: skewX(-45deg);}
+            to   { -webkit-transform: skewX(0);}
+        }
+
+
+        @-webkit-keyframes skew
+        {
+            from { -webkit-transform: skewX(0deg);}
+            25%  { -webkit-transform: skewX(45deg);}
+            50%  { -webkit-transform: skewX(0);}
+            75%  { -webkit-transform: skewX(-45deg);}
+            to   { -webkit-transform: skewX(0);}
+        }
+    </style>
+</head>
+<body>
+    <div class = "skew">
+        <div class = "textbook">Skewing Text</div>
+    </div>
+</body>
+</html>
