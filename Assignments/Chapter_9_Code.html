@@ -41,8 +41,7 @@ Beginning Web Programming
         //Flips coin once
         function flip()
         {
-            var result = Math.floor(1 + Math.random() * 2);
-            return result;
+            return Math.floor(1 + Math.random() * 2);
         }
 
         //Main function or start
@@ -102,6 +101,7 @@ Beginning Web Programming
                     "</tbody></table>";
         }
 
+
         //Creating and loading event.
         window.addEventListener("load", main, false);
 
@@ -127,12 +127,4 @@ appears. Display the results. The program should call a separate function flip t
 takes no arguments and returns false for tails and true for heads.
 [Note: If the program realistically simulates the coin tossing, each side of the coin
 should appear approximately half the time.
-
-1. write a function that will choose either a 1 or 2. As in heads or tails.
-
-2. write a second function that will take it the above results, and count how many heads
-and tail results. Display the result as both number of heads and tails
-and percentage.
-
-3. Let's see if it made any changes!!
 -->
