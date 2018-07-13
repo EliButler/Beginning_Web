@@ -37,13 +37,16 @@ Beginning Web Programming
 
 
         //Function to flip coin
-        //1 = heads
-        //2 = tails
+        //1 = heads = true
+        //2 = tails = false
 
         //Flips coin once
         function flip()
         {
+            //variable declaration
             var flip_result;
+
+            //Random flip
             flip_result = Math.floor(1 + Math.random() * 2);
             if (flip_result == 1)
             {
@@ -67,6 +70,7 @@ Beginning Web Programming
             //flip function call
             internal_result = flip();
 
+            //Accumulating Results
             if (internal_result == true)
             {
                 head_count += 1;
@@ -78,7 +82,8 @@ Beginning Web Programming
                 tail_count += 1;
                 total_count += 1;
             }
-            //Percentage
+
+            //Percentage Calculation
             head_percent = ((head_count/total_count)*100).toFixed(1);
             tail_percent = ((tail_count/total_count)*100).toFixed(1);
             difference_1 = head_percent - tail_percent;
@@ -88,7 +93,7 @@ Beginning Web Programming
             results_table()
         }
 
-        //Heads or Tails
+        //Heads or Tails Output
         function head_or_tails() {
             if (internal_result == true)
             {
@@ -100,6 +105,7 @@ Beginning Web Programming
                 return "Tail";
             }
         }
+
         //Results Table
         function results_table()
         {
