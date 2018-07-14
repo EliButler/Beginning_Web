@@ -1,0 +1,63 @@
+<!--
+Michael Eli Butler
+Chapter # 10
+ITSE-1311-001
+Beginning Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 10 Assignment</title>
+    <link href="Chapter_10_stylesheet.css" type="text/css" rel="stylesheet"/>
+    <script src = "Chapter_10.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+    <!--Title-->
+    <h2>Salary Calculation</h2>
+    <p><ol>
+        <li>Enter Employees Weekly Sales in USD.</li>
+        <li>Click <em>Enter</em> to enter data.</li>
+        <li>When finished click <em>Calculate</em> to generate table.</li>
+    </ol></p>
+
+    <!--Form-->
+    <form action="#">
+        <label> Weekly Salary:
+        <input id = "user_entry"  type = "number" name = "Weekly Salary" min = "0">
+        </label>
+
+        <input id = "enter" type = "button" value="Enter">
+        <input id = "calculate" type = "button" value = "Calculate">
+    </form>
+
+    <!--Table-->
+    <div id = "table_div_html"></div>
+
+</body>
+</html>
+
+<!--
+10.10 Use a one-dimensional array to solve the following problem: A company pays its salespeople
+on a commission basis. The salespeople receive $200 per week plus 9% of their gross sales for
+that week. For example, a salesperson who grosses $5000 in sales in a week receives $200 plus 9%
+of $5000, or a total of $650. Write a script (using an array of counters) that obtains the gross
+sales for each employee through an HTML5 form and determines how many of the salespeople
+earned salaries in each of the following ranges(assume that each salesperson's salary is truncated to
+an integer amount):
+    a. 200-299
+    b. 300-399
+    c. 400-499
+    d. 500-599
+    e. 600-699
+    f. 700-799
+    g. 800-899
+    h. 900-999
+    j. 1000 and over
+
+1. The array is 9 elements long
+2. form takes in employee total sales for the week
+3. total pay = 200 + (sales * 0.09)
+-->
