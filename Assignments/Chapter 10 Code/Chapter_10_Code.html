@@ -84,6 +84,9 @@ Beginning Web Programming
                     emp_data[8] = 9999;
                     break;
             }
+
+            //resetting input box
+            document.getElementById("my_form").reset();
         }
 
         function create_table()
@@ -134,7 +137,7 @@ Beginning Web Programming
         <li>3. When finished press <em>Calculate</em> to show Commission Table.</li>
     </ol>
 
-    <form action = "#">
+    <form id = "my_form" action = "#">
         <label>
             Commission:
             <input id = "entry_box" type = "number">
@@ -148,8 +151,6 @@ Beginning Web Programming
 </body>
 </html>
 <!--
-Make it all one or two functions and the array a global variable.
-
 10.10 Use a one-dimensional array to solve the following problem: A company pays its salespeople
 on a commission basis. The salespeople receive $200 per week plus 9% of their gross sales for
 that week. For example, a salesperson who grosses $5000 in sales in a week receives $200 plus 9%
@@ -166,8 +167,4 @@ an integer amount):
     g. 800-899
     h. 900-999
     j. 1000 and over
-
-1. The array is 9 elements long
-2. form takes in employee total sales for the week
-3. total pay = 200 + (sales * 0.09)
 -->
