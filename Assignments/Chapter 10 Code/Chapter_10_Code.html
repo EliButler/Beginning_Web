@@ -9,37 +9,147 @@ Beginning Web Programming
 <head>
     <meta charset="UTF-8">
     <title>Chapter 10 Assignment</title>
-    <link href="Chapter_10_stylesheet.css" type="text/css" rel="stylesheet"/>
-    <script src = "Chapter_10.js" type="text/javascript"></script>
+    <style type = "text/css">
+        em              {font-weight: bold;}
 
+        table           {border: black 3px solid;}
+    </style>
+    <script>
+        //Global Variables
+        var emp_data = new Array(9);
+        emp_data[0] = 0;
+        emp_data[1] = 0;
+        emp_data[2] = 0;
+        emp_data[3] = 0;
+        emp_data[4] = 0;
+        emp_data[5] = 0;
+        emp_data[6] = 0;
+        emp_data[7] = 0;
+        emp_data[8] = 0;
+
+        //User Entry
+        function user_entry()
+        {
+            //Getting and returning user input data
+            var input_data = document.getElementById("entry_box");
+
+            //Conversion of string to Int
+            var num_data = parseInt(input_data.value);
+
+
+            //Calculation
+            var emp_commission = 200 + (num_data * 0.09);
+            emp_commission = emp_commission.toFixed(0);
+
+            //Entering Data into Array
+            switch (true)
+            {
+                case (emp_commission < 299):
+                    emp_data[0] += 1;
+                    break;
+
+                case (emp_commission > 299 && emp_commission < 400):
+                    emp_data[1] += 1;
+                    break;
+
+                case (emp_commission > 399 && emp_commission < 500):
+                    emp_data[2] += 1;
+                    break;
+
+                case (emp_commission > 499 && emp_commission < 600):
+                    emp_data[3] += 1;
+                    break;
+
+                case (emp_commission > 599 && emp_commission < 700):
+                    emp_data[4] += 1;
+                    break;
+
+                case (emp_commission > 699 && emp_commission < 800):
+                    emp_data[5] += 1;
+                    break;
+
+                case (emp_commission > 799 && emp_commission < 900):
+                    emp_data[6] += 1;
+                    break;
+
+                case (emp_commission > 899 && emp_commission < 1000):
+                    emp_data[7] += 1;
+                    break;
+
+                case (emp_commission > 1000):
+                    emp_data[8] += 1;
+                    break;
+
+                default:
+                    emp_data[8] = 9999;
+                    break;
+            }
+        }
+
+        function create_table()
+        {
+            //Placing into HTML
+            var table_display = document.getElementById("table_html");
+
+            //Creating table
+            table_display.innerHTML = "<table border = 1>" +
+                    "<caption>Commission Data</caption>" +
+                    "<thead><th>Commission Range</th><th>Commission Data</th></thead>" +
+                    "<tr><td>0- 299</td><td>" + emp_data[0] + "</td></tr>" +
+                    "<tr><td>300 - 399</td><td>" + emp_data[1] + "</td></tr>" +
+                    "<tr><td>400 - 499</td><td>" + emp_data[2] + "</td></tr>" +
+                    "<tr><td>500 - 599</td><td>" + emp_data[3] + "</td></tr>" +
+                    "<tr><td>600 - 699</td><td>" + emp_data[4] + "</td></tr>" +
+                    "<tr><td>700 - 799</td><td>" + emp_data[5] + "</td></tr>" +
+                    "<tr><td>800 - 899</td><td>" + emp_data[6] + "</td></tr>" +
+                    "<tr><td>900 - 999</td><td>" + emp_data[7] + "</td></tr>" +
+                    "<tr><td>Over 1000</td><td>" + emp_data[8] + "</td></tr>" +
+                    "<tr><td>Default Value</td><td>" + emp_data[8] + "</td></tr>" +
+                    "</table>";
+        }
+
+        function start()
+        {
+            var enter_button = document.getElementById("enter_button");
+            enter_button.addEventListener("click", user_entry, false);
+
+            var calc_button = document.getElementById("calc_table");
+            calc_button.addEventListener("click", create_table, false);
+        }
+
+        window.addEventListener("load", start, false);
+    </script>
 </head>
+
+
+<html>
 <body>
-
     <!--Title-->
-    <h2>Salary Calculation</h2>
-    <p><ol>
-        <li>Enter Employees Weekly Sales in USD.</li>
-        <li>Click <em>Enter</em> to enter data.</li>
-        <li>When finished click <em>Calculate</em> to generate table.</li>
-    </ol></p>
+    <h2>Employee Commission Calculation</h2>
 
-    <!--Form-->
-    <form action="#">
-        <label> Weekly Salary:
-        <input id = "user_entry"  type = "number" name = "Weekly Salary" min = "0">
-        </label>
+    <!--List of instructions-->
+    <ol>
+        <li>1. Enter the commission earned by each employee.</li>
+        <li>2. Press the <em>Enter</em> button.</li>
+        <li>3. When finished press <em>Calculate</em> to show Commission Table.</li>
+    </ol>
 
-        <input id = "enter" type = "button" value="Enter">
-        <input id = "calculate" type = "button" value = "Calculate">
+    <form action = "#">
+        <label>
+            Commission:
+            <input id = "entry_box" type = "number">
+            </label>
+            <input id = "enter_button" type = "button" value = "Enter">
+            <input id = "calc_table" type = "button" value = "Calculate">
     </form>
 
-    <!--Table-->
-    <div id = "table_div_html"></div>
+    <p id = "table_html"></p>
 
 </body>
 </html>
-
 <!--
+Make it all one or two functions and the array a global variable.
+
 10.10 Use a one-dimensional array to solve the following problem: A company pays its salespeople
 on a commission basis. The salespeople receive $200 per week plus 9% of their gross sales for
 that week. For example, a salesperson who grosses $5000 in sales in a week receives $200 plus 9%
