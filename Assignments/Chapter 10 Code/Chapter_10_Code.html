@@ -13,6 +13,11 @@ Beginning Web Programming
         em              {font-weight: bold;}
 
         table           {border: black 3px solid;}
+
+        .title          {font-weight: bold;
+                         font-size: 2em;}
+
+        .move_right           {padding-left: 4em;}
     </style>
     <script>
         //Global Variables
@@ -65,9 +70,10 @@ Beginning Web Programming
 
                 case (emp_commission > 899 && emp_commission < 1000):
                     emp_data[7] += 1;
+                    document.write("<h1>" + emp_commission + "</h1>");
                     break;
 
-                case (emp_commission > 1000):
+                case (emp_commission > 999):
                     emp_data[8] += 1;
                     break;
             }
@@ -83,7 +89,7 @@ Beginning Web Programming
 
             //Creating table
             table_display.innerHTML = "<table border = 1>" +
-                    "<caption>Commission Data</caption>" +
+                    "<caption class = title>Commission Data</caption>" +
                     "<thead><th>Commission Range</th><th>Commission Data</th></thead>" +
                     "<tr><td>0- 299</td><td>" + emp_data[0] + "</td></tr>" +
                     "<tr><td>300 - 399</td><td>" + emp_data[1] + "</td></tr>" +
@@ -111,8 +117,8 @@ Beginning Web Programming
 </head>
 
 
-<html>
 <body>
+    <div>
     <!--Title-->
     <h2>Employee Commission Calculation</h2>
 
@@ -131,8 +137,11 @@ Beginning Web Programming
             <input id = "enter_button" type = "button" value = "Enter">
             <input id = "calc_table" type = "button" value = "Show Table">
     </form>
+    </div>
 
+    <div class = move_right>
     <p id = "table_html"></p>
+    </div>
 
 </body>
 </html>
