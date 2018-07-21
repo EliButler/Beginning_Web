@@ -107,9 +107,10 @@ Beginning Web Programming
             //Enter Button
             var enter_button = document.getElementById("enter_button");
             enter_button.addEventListener("click", user_entry, false);
+            //Renewing Table
             enter_button.addEventListener("click", create_table, false);
         }
-
+        //Loading Events to start when page loads
         window.addEventListener("load", start, false);
         window.addEventListener("load", create_table, false);
     </script>
@@ -127,17 +128,20 @@ Beginning Web Programming
         <li>2. Press the <em>Enter</em> button. Table will automatically populate.</li>
     </ol>
 
+        <!--Entry Form-->
     <form id = "my_form" action = "#">
         <label>
             Commission:
             <input id = "entry_box" type = "number" autofocus>
             </label>
             <input id = "enter_button" type = "button" value = "Enter">
-            <!--<input id = "calc_table" type = "button" value = "Show Table">-->
     </form>
     </div>
 
+    <!--Aligning Table in Div box-->
     <div class = move_right>
+
+    <!--Inserting Javascript created table.-->
     <p id = "table_html"></p>
     </div>
 
@@ -164,5 +168,5 @@ an integer amount):
 
     midpoint = good
     upper limits = good
-    lower limit
+    lower limit = good
 -->
