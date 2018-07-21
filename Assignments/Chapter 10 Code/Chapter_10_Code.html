@@ -40,7 +40,7 @@ Beginning Web Programming
             //Entering Data into Array
             switch (true)
             {
-                case (emp_commission < 299):
+                case (emp_commission < 300):
                     emp_data[0] += 1;
                     break;
 
@@ -70,7 +70,6 @@ Beginning Web Programming
 
                 case (emp_commission > 899 && emp_commission < 1000):
                     emp_data[7] += 1;
-                    document.write("<h1>" + emp_commission + "</h1>");
                     break;
 
                 case (emp_commission > 999):
@@ -105,14 +104,14 @@ Beginning Web Programming
 
         function start()
         {
+            //Enter Button
             var enter_button = document.getElementById("enter_button");
             enter_button.addEventListener("click", user_entry, false);
-
-            var calc_button = document.getElementById("calc_table");
-            calc_button.addEventListener("click", create_table, false);
+            enter_button.addEventListener("click", create_table, false);
         }
 
         window.addEventListener("load", start, false);
+        window.addEventListener("load", create_table, false);
     </script>
 </head>
 
@@ -125,17 +124,16 @@ Beginning Web Programming
     <!--List of instructions-->
     <ol>
         <li>1. Enter the commission earned by each employee.</li>
-        <li>2. Press the <em>Enter</em> button.</li>
-        <li>3. When finished press <em>Show Table</em> to show Commission Table.</li>
+        <li>2. Press the <em>Enter</em> button. Table will automatically populate.</li>
     </ol>
 
     <form id = "my_form" action = "#">
         <label>
             Commission:
-            <input id = "entry_box" type = "number">
+            <input id = "entry_box" type = "number" autofocus>
             </label>
             <input id = "enter_button" type = "button" value = "Enter">
-            <input id = "calc_table" type = "button" value = "Show Table">
+            <!--<input id = "calc_table" type = "button" value = "Show Table">-->
     </form>
     </div>
 
@@ -163,4 +161,8 @@ an integer amount):
     h. 900-999 = 8333
     j. 1000 and over = 8889
     com = 200 + (num * 0.09)
+
+    midpoint = good
+    upper limits = good
+    lower limit
 -->
